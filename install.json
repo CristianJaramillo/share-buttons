@@ -1,0 +1,140 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./madraka.css"
+      },
+      {
+        "type": "script",
+        "src": "./js/jquery-1.10.2.min.js"
+      },
+      {
+        "type": "script",
+        "src": "./js/jquery-1.10.2.min.map"
+      },
+      {
+        "type": "script",
+        "src": "./madraka.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["particleColor", "backgroundColor"],
+        "execute": "INSTALL_SCOPE.setColors(INSTALL_OPTIONS)"
+      },
+      {
+        "options": ["interaction", "behavior", "showAdvanced"],
+        "execute": "INSTALL_SCOPE.setCommon(INSTALL_OPTIONS)"
+      },
+      {
+        "options": ["fewerParticles"],
+        "execute": "INSTALL_SCOPE.setResetworthy(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "backgroundColor": {
+        "order": 1,
+        "title": "Background color",
+        "type": "string",
+        "format": "color",
+        "description": "Defaults to transparent."
+      },
+
+      "particleColor": {
+        "order": 2,
+        "title": "Particle color",
+        "type": "string",
+        "format": "color",
+        "description": "Defaults to contrasting color."
+      },
+
+      "interaction": {
+        "order": 3,
+        "type": "object",
+        "title": "Interaction",
+        "properties": {
+          "onHover": {
+            "order": 1,
+            "type": "string",
+            "description": "What should the particles do when the user moves their pointer?",
+            "title": "Hover",
+            "default": "grab",
+            "enum": [
+              "grab",
+              "repulse",
+              "bubble",
+              "none"
+            ],
+            "enumNames": {
+              "grab": "Connect to pointer",
+              "repulse": "Push away",
+              "bubble": "Grow",
+              "none": "Nothing"
+            }
+          },
+          "onClick": {
+            "order": 2,
+            "type": "string",
+            "title": "Click",
+            "description": "What should the particles do when the user clicks their pointer?",
+            "default": "push",
+            "enum": [
+              "push",
+              "repulse",
+              "bubble",
+              "none"
+            ],
+            "enumNames": {
+              "push": "Add particles",
+              "repulse": "Push particles away",
+              "bubble": "Grow particles",
+              "none": "Nothing"
+            }
+          }
+        }
+      },
+
+      "behavior": {
+        "order": 4,
+        "type": "object",
+        "title": "Behavior",
+        "properties": {
+          "outMode": {
+            "order": 0,
+            "type": "string",
+            "title": "Screen edges",
+            "description": "What should happen when a particle hits the edge of the screen?",
+            "default": "out",
+            "enum": [
+              "out",
+              "bounce"
+            ],
+            "enumNames": {
+              "bounce": "Bounce back in",
+              "out": "Flow offscreen"
+            }
+          }
+        }
+      },
+
+      "showAdvanced": {
+        "order": 5,
+        "type": "boolean",
+        "title": "Show advanced options"
+      },
+
+      "fewerParticles": {
+        "showIf": "showAdvanced",
+        "order": 6,
+        "type": "boolean",
+        "title": "Display fewer particles",
+        "description": "Fewer particles may increase performance."
+      }
+    }
+  }
+}
