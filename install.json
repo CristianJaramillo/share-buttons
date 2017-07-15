@@ -3,19 +3,19 @@
     "head": [
       {
         "type": "style",
-        "src": "./build/app.css"
+        "src": "./madraka.css"
       },
       {
         "type": "script",
-        "src": "./vendor/tinycolor.js"
+        "src": "./js/jquery-1.10.2.min.js"
       },
       {
         "type": "script",
-        "src": "./vendor/particles.js"
+        "src": "./js/jquery-1.10.2.min.map"
       },
       {
         "type": "script",
-        "src": "./build/app.js"
+        "src": "./madraka.js"
       }
     ]
   },
